@@ -1,0 +1,10 @@
+# mount point	fstype		device
+
+/boot		mtd		boot
+/cache		yaffs2		cache
+/data		yaffs2		userdata
+/emmc		vfat		/dev/block/avnftl8p1	/dev/block/avnftl8
+/recovery	mtd		recovery
+/sdcard		vfat		/dev/block/cardblksd1	/dev/block/cardblksd
+/sd-ext		auto		/dev/block/cardblksd2
+/system		yaffs2		system

@@ -1,0 +1,873 @@
+state.AMLM1 {
+	control.1 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 'Jack detect input'
+		comment.item.1 Reserved
+		comment.item.2 'Temperature ok'
+		comment.item.3 'Debounced jack detect output'
+		comment.item.4 'SYSCLK output'
+		comment.item.5 'FLL lock'
+		comment.item.6 'Logic 0'
+		comment.item.7 'Logic 1'
+		iface MIXER
+		name 'GPIO pin function select'
+		value 'Logic 0'
+	}
+	control.2 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'CSB PD ENA'
+		value true
+	}
+	control.3 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'AIF TRI'
+		value false
+	}
+	control.4 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Enable VMID Buf'
+		value false
+	}
+	control.5 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 'ADCLRC frame clock for ADC'
+		comment.item.1 'GPIO pin'
+		iface MIXER
+		name 'ADCLRC/GPIO function select'
+		value 'GPIO pin'
+	}
+	control.6 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 '0.9*AVDD'
+		comment.item.1 '0.65*AVDD'
+		iface MIXER
+		name 'Mic Bias Level'
+		value '0.65*AVDD'
+	}
+	control.7 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 31'
+		comment.dbmin -1200
+		comment.dbmax 1900
+		iface MIXER
+		name 'Left Input PGA Volume'
+		value 31
+	}
+	control.8 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input PGA Switch'
+		value true
+	}
+	control.9 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input PGA ZC Switch'
+		value false
+	}
+	control.10 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 31'
+		comment.dbmin -1200
+		comment.dbmax 1900
+		iface MIXER
+		name 'Right Input PGA Volume'
+		value 31
+	}
+	control.11 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input PGA Switch'
+		value true
+	}
+	control.12 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input PGA ZC Switch'
+		value false
+	}
+	control.13 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'DAC Soft Mute Switch'
+		value false
+	}
+	control.14 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Fast
+		comment.item.1 Slow
+		iface MIXER
+		name 'DAC Mute Rate'
+		value Fast
+	}
+	control.15 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'DAC Mono Switch'
+		value false
+	}
+	control.16 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Disabled
+		comment.item.1 '32kHz'
+		comment.item.2 '44.1kHz'
+		comment.item.3 '48kHz'
+		iface MIXER
+		name 'DAC Deemphasis'
+		value Disabled
+	}
+	control.17 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'DAC Sigma-Delta Modulator Clock Switch'
+		value true
+	}
+	control.18 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'ADC HPF Switch'
+		value true
+	}
+	control.19 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 'Hi-fi mode'
+		comment.item.1 'Voice mode 1'
+		comment.item.2 'Voice mode 2'
+		comment.item.3 'Voice mode 3'
+		iface MIXER
+		name 'ADC HPF Cut-Off'
+		value 'Hi-fi mode'
+	}
+	control.20 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'ADC Invert Switch'
+		value.0 false
+		value.1 false
+	}
+	control.21 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 12'
+		comment.dbmin -3600
+		comment.dbmax 0
+		iface MIXER
+		name 'Left ADC Sidetone Volume'
+		value 0
+	}
+	control.22 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 12'
+		comment.dbmin -3600
+		comment.dbmax 0
+		iface MIXER
+		name 'Right ADC Sidetone Volume'
+		value 0
+	}
+	control.23 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Left
+		comment.item.1 Right
+		iface MIXER
+		name 'Left Digital Audio Source'
+		value Left
+	}
+	control.24 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Left
+		comment.item.1 Right
+		iface MIXER
+		name 'Right Digital Audio Source'
+		value Right
+	}
+	control.25 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 4'
+		comment.dbmin 0
+		comment.dbmax 2400
+		iface MIXER
+		name 'DAC Input Boost Volume'
+		value 0
+	}
+	control.26 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Left
+		comment.item.1 Right
+		iface MIXER
+		name 'Left DAC Source'
+		value Left
+	}
+	control.27 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Left
+		comment.item.1 Right
+		iface MIXER
+		name 'Right DAC Source'
+		value Right
+	}
+	control.28 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Disabled
+		comment.item.1 'Left ADC'
+		comment.item.2 'Right ADC'
+		iface MIXER
+		name 'Left DAC Sidetone'
+		value Disabled
+	}
+	control.29 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Disabled
+		comment.item.1 'Left ADC'
+		comment.item.2 'Right ADC'
+		iface MIXER
+		name 'Right DAC Sidetone'
+		value Disabled
+	}
+	control.30 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'DAC Invert Switch'
+		value.0 false
+		value.1 false
+	}
+	control.31 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 96'
+		comment.dbmin -7200
+		comment.dbmax 0
+		iface MIXER
+		name 'Digital Playback Volume'
+		value.0 96
+		value.1 96
+	}
+	control.32 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 119'
+		comment.dbmin -7200
+		comment.dbmax 1725
+		iface MIXER
+		name 'Digital Capture Volume'
+		value.0 119
+		value.1 119
+	}
+	control.33 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'LINPUT3 Bypass Volume'
+		value 5
+	}
+	control.34 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'RINPUT3 Bypass Volume'
+		value 5
+	}
+	control.35 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'Left AUX Bypass Volume'
+		value 5
+	}
+	control.36 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'Right AUX Bypass Volume'
+		value 5
+	}
+	control.37 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'LeftIn to RightOut Mixer Volume'
+		value 5
+	}
+	control.38 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'LeftIn to LeftOut Mixer Volume'
+		value 5
+	}
+	control.39 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'RightIn to LeftOut Mixer Volume'
+		value 5
+	}
+	control.40 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 7'
+		comment.dbmin -1500
+		comment.dbmax 600
+		iface MIXER
+		name 'RightIn to RightOut Mixer Volume'
+		value 5
+	}
+	control.41 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		comment.dbmin -1200
+		comment.dbmax 600
+		iface MIXER
+		name 'IN2L Boost Volume'
+		value 3
+	}
+	control.42 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		comment.dbmin -1200
+		comment.dbmax 600
+		iface MIXER
+		name 'IN3L Boost Volume'
+		value 0
+	}
+	control.43 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		comment.dbmin -1200
+		comment.dbmax 600
+		iface MIXER
+		name 'IN2R Boost Volume'
+		value 3
+	}
+	control.44 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		comment.dbmin -1200
+		comment.dbmax 600
+		iface MIXER
+		name 'IN3R Boost Volume'
+		value 0
+	}
+	control.45 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		comment.dbmin -1200
+		comment.dbmax 600
+		iface MIXER
+		name 'Left AUX Boost Volume'
+		value 0
+	}
+	control.46 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 1
+		comment.range '0 - 3'
+		comment.dbmin -1200
+		comment.dbmax 600
+		iface MIXER
+		name 'Right AUX Boost Volume'
+		value 0
+	}
+	control.47 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 63'
+		comment.dbmin -5700
+		comment.dbmax 600
+		iface MIXER
+		name 'LINEOUT1 Volume'
+		value.0 57
+		value.1 57
+	}
+	control.48 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'LINEOUT1 Switch'
+		value.0 true
+		value.1 true
+	}
+	control.49 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'LINEOUT1 ZC Switch'
+		value.0 false
+		value.1 false
+	}
+	control.50 {
+		comment.access 'read write'
+		comment.type INTEGER
+		comment.count 2
+		comment.range '0 - 63'
+		comment.dbmin -5700
+		comment.dbmax 600
+		iface MIXER
+		name 'LINEOUT2 Volume'
+		value.0 57
+		value.1 57
+	}
+	control.51 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'LINEOUT2 Switch'
+		value.0 true
+		value.1 true
+	}
+	control.52 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 2
+		iface MIXER
+		name 'LINEOUT2 ZC Switch'
+		value.0 false
+		value.1 false
+	}
+	control.53 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'LINEOUT2 LP -12dB'
+		value true
+	}
+	control.54 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Output Mixer RINPUT3 Bypass Switch'
+		value false
+	}
+	control.55 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Output Mixer AUX Bypass Switch'
+		value false
+	}
+	control.56 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Output Mixer Left Input Mixer Switch'
+		value false
+	}
+	control.57 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Output Mixer Right Input Mixer Switch'
+		value false
+	}
+	control.58 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Output Mixer DACR Switch'
+		value true
+	}
+	control.59 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Output Mixer LINPUT3 Bypass Switch'
+		value false
+	}
+	control.60 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Output Mixer AUX Bypass Switch'
+		value false
+	}
+	control.61 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Output Mixer Left Input Mixer Switch'
+		value false
+	}
+	control.62 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Output Mixer Right Input Mixer Switch'
+		value false
+	}
+	control.63 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Output Mixer DACL Switch'
+		value true
+	}
+	control.64 {
+		comment.access 'read write'
+		comment.type ENUMERATED
+		comment.count 1
+		comment.item.0 Disabled
+		comment.item.1 Enabled
+		iface MIXER
+		name 'LINEOUT2 LP'
+		value Disabled
+	}
+	control.65 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input Mixer RINPUT2 Switch'
+		value true
+	}
+	control.66 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input Mixer RINPUT3 Switch'
+		value false
+	}
+	control.67 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input Mixer AUX Switch'
+		value false
+	}
+	control.68 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input Mixer Input PGA Switch'
+		value true
+	}
+	control.69 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input Mixer LINPUT2 Switch'
+		value true
+	}
+	control.70 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input Mixer LINPUT3 Switch'
+		value false
+	}
+	control.71 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input Mixer AUX Switch'
+		value false
+	}
+	control.72 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input Mixer Input PGA Switch'
+		value true
+	}
+	control.73 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input PGA RINPUT1 Switch'
+		value false
+	}
+	control.74 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input PGA RINPUT2 Switch'
+		value true
+	}
+	control.75 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Right Input PGA RINPUT3 Switch'
+		value false
+	}
+	control.76 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input PGA LINPUT1 Switch'
+		value false
+	}
+	control.77 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input PGA LINPUT2 Switch'
+		value true
+	}
+	control.78 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
+		name 'Left Input PGA LINPUT3 Switch'
+		value false
+	}
+}
+state.AMLM3 {
+        control.1 {
+                comment.access 'read write'
+                comment.type INTEGER
+                comment.count 2
+                comment.range '0 - 84'
+                comment.dbmin -12600
+                comment.dbmax 0
+                iface MIXER
+                name 'LINEOUT Playback Volume'
+                value.0 84
+                value.1 84
+        }
+        control.2 {
+                comment.access 'read write'
+                comment.type INTEGER
+                comment.count 2
+                comment.range '0 - 46'
+                comment.dbmin -4000
+                comment.dbmax 600
+                iface MIXER
+                name 'HeadSet Playback Volume'
+                value.0 40
+                value.1 40
+        }
+        control.3 {
+                comment.access 'read write'
+                comment.type INTEGER
+                comment.count 2
+                comment.range '0 - 84'
+                comment.dbmin -9600
+                comment.dbmax 3000
+                iface MIXER
+                name 'LINEIN Capture Volume'
+                value.0 64
+                value.1 64
+        }
+        control.4 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 'Left Line In 1'
+                comment.item.1 'Left Line In 2'
+                comment.item.2 'Left Line In 3'
+                comment.item.3 'Left Line In 4'
+                comment.item.4 'Left Line In 5'
+                comment.item.5 'Left Line In 6'
+                comment.item.6 'Left Line In 7'
+                comment.item.7 'Left Line In 8'
+                iface MIXER
+                name 'Left LINEIN Select'
+                value 'Left Line In 1'
+        }
+        control.5 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 'Right Line In 1'
+                comment.item.1 'Right Line In 2'
+                comment.item.2 'Right Line In 3'
+                comment.item.3 'Right Line In 4'
+                comment.item.4 'Right Line In 5'
+                comment.item.5 'Right Line In 6'
+                comment.item.6 'Right Line In 7'
+                comment.item.7 'Right Line In 8'
+                iface MIXER
+                name 'Right LINEIN Select'
+                value 'Right Line In 1'
+        }
+        control.6 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 iis_not_split
+                comment.item.1 iis_split
+                iface MIXER
+                name 'IIS Split Select'
+                value iis_split
+        }
+        control.7 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 OFF
+                comment.item.1 ON
+                iface MIXER
+                name 'LOUT Playback Switch'
+                value ON
+        }
+        control.8 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 OFF
+                comment.item.1 ON
+                iface MIXER
+                name 'HP Playback Switch'
+                value ON
+        }
+        control.9 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 OFF
+                comment.item.1 ON
+                iface MIXER
+                name 'LIN Capture Switch'
+                value ON
+        }
+        control.10 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 OFF
+                comment.item.1 ON
+                iface MIXER
+                name 'SP Playback Switch'
+                value ON
+        }
+        control.11 {
+                comment.access 'read write'
+                comment.type ENUMERATED
+                comment.count 1
+                comment.item.0 LINEIN
+                comment.item.1 HDMI
+                iface MIXER
+                name 'Audio In Source'
+                value LINEIN
+        }
+}
