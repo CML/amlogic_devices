@@ -27,6 +27,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-flags=m=y \
     persist.sys.usb.config=mass_storage
 
+# amplayer for HW accelerated video
+PRODUCT_PROPERTY_OVERRIDES += \
+    media.amsuperplayer.enable=true \
+    media.amplayer.enable-acodecs=asf,wav,aac,mp3,m4a,ape,flac,alac \
+    media.amplayer.enable=true \
+    media.amsuperplayer.m4aplayer=STAGEFRIGHT_PLAYER \
+    media.amsuperplayer.defplayer=PV_PLAYER \
+    media.amplayer.thumbnail=true
+
 # HDMI 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.hdmi480p.enable=false \
