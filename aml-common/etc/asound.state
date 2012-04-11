@@ -302,7 +302,7 @@ state.AMLM1 {
 		iface MIXER
 		name 'Digital Playback Volume'
 		value.0 96
-		value.1 96
+		value.1 127
 	}
 	control.32 {
 		comment.access 'read write'
@@ -479,8 +479,8 @@ state.AMLM1 {
 		comment.dbmax 600
 		iface MIXER
 		name 'LINEOUT1 Volume'
-		value.0 57
-		value.1 57
+		value.0 63
+		value.1 63
 	}
 	control.48 {
 		comment.access 'read write'
@@ -509,8 +509,8 @@ state.AMLM1 {
 		comment.dbmax 600
 		iface MIXER
 		name 'LINEOUT2 Volume'
-		value.0 57
-		value.1 57
+		value.0 63
+		value.1 63
 	}
 	control.51 {
 		comment.access 'read write'
@@ -540,18 +540,23 @@ state.AMLM1 {
 	}
 	control.54 {
 		comment.access 'read write'
-		comment.type BOOLEAN
-		comment.count 1
+		comment.type ENUMERATED
+		comment.count 2
+		comment.item.0 '+0 dB'
+		comment.item.1 '+13 dB'
+		comment.item.2 '+20 dB'
+		comment.item.3 '+29 dB'
 		iface MIXER
-		name 'Right Output Mixer RINPUT3 Bypass Switch'
-		value false
+		name 'IN MIXIN Boost'
+		value.0 '+0 dB'
+		value.1 '+29 dB'
 	}
 	control.55 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'Right Output Mixer AUX Bypass Switch'
+		name 'Right Output Mixer RINPUT3 Bypass Switch'
 		value false
 	}
 	control.56 {
@@ -559,7 +564,7 @@ state.AMLM1 {
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'Right Output Mixer Left Input Mixer Switch'
+		name 'Right Output Mixer AUX Bypass Switch'
 		value false
 	}
 	control.57 {
@@ -567,7 +572,7 @@ state.AMLM1 {
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
-		name 'Right Output Mixer Right Input Mixer Switch'
+		name 'Right Output Mixer Left Input Mixer Switch'
 		value false
 	}
 	control.58 {
@@ -575,10 +580,18 @@ state.AMLM1 {
 		comment.type BOOLEAN
 		comment.count 1
 		iface MIXER
+		name 'Right Output Mixer Right Input Mixer Switch'
+		value false
+	}
+	control.59 {
+		comment.access 'read write'
+		comment.type BOOLEAN
+		comment.count 1
+		iface MIXER
 		name 'Right Output Mixer DACR Switch'
 		value true
 	}
-	control.59 {
+	control.60 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -586,7 +599,7 @@ state.AMLM1 {
 		name 'Left Output Mixer LINPUT3 Bypass Switch'
 		value false
 	}
-	control.60 {
+	control.61 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -594,7 +607,7 @@ state.AMLM1 {
 		name 'Left Output Mixer AUX Bypass Switch'
 		value false
 	}
-	control.61 {
+	control.62 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -602,7 +615,7 @@ state.AMLM1 {
 		name 'Left Output Mixer Left Input Mixer Switch'
 		value false
 	}
-	control.62 {
+	control.63 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -610,7 +623,7 @@ state.AMLM1 {
 		name 'Left Output Mixer Right Input Mixer Switch'
 		value false
 	}
-	control.63 {
+	control.64 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -618,7 +631,7 @@ state.AMLM1 {
 		name 'Left Output Mixer DACL Switch'
 		value true
 	}
-	control.64 {
+	control.65 {
 		comment.access 'read write'
 		comment.type ENUMERATED
 		comment.count 1
@@ -628,7 +641,7 @@ state.AMLM1 {
 		name 'LINEOUT2 LP'
 		value Disabled
 	}
-	control.65 {
+	control.66 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -636,7 +649,7 @@ state.AMLM1 {
 		name 'Right Input Mixer RINPUT2 Switch'
 		value true
 	}
-	control.66 {
+	control.67 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -644,7 +657,7 @@ state.AMLM1 {
 		name 'Right Input Mixer RINPUT3 Switch'
 		value false
 	}
-	control.67 {
+	control.68 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -652,7 +665,7 @@ state.AMLM1 {
 		name 'Right Input Mixer AUX Switch'
 		value false
 	}
-	control.68 {
+	control.69 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -660,7 +673,7 @@ state.AMLM1 {
 		name 'Right Input Mixer Input PGA Switch'
 		value true
 	}
-	control.69 {
+	control.70 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -668,7 +681,7 @@ state.AMLM1 {
 		name 'Left Input Mixer LINPUT2 Switch'
 		value true
 	}
-	control.70 {
+	control.71 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -676,7 +689,7 @@ state.AMLM1 {
 		name 'Left Input Mixer LINPUT3 Switch'
 		value false
 	}
-	control.71 {
+	control.72 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -684,7 +697,7 @@ state.AMLM1 {
 		name 'Left Input Mixer AUX Switch'
 		value false
 	}
-	control.72 {
+	control.73 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -692,7 +705,7 @@ state.AMLM1 {
 		name 'Left Input Mixer Input PGA Switch'
 		value true
 	}
-	control.73 {
+	control.74 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -700,7 +713,7 @@ state.AMLM1 {
 		name 'Right Input PGA RINPUT1 Switch'
 		value false
 	}
-	control.74 {
+	control.75 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -708,7 +721,7 @@ state.AMLM1 {
 		name 'Right Input PGA RINPUT2 Switch'
 		value true
 	}
-	control.75 {
+	control.76 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -716,7 +729,7 @@ state.AMLM1 {
 		name 'Right Input PGA RINPUT3 Switch'
 		value false
 	}
-	control.76 {
+	control.77 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -724,7 +737,7 @@ state.AMLM1 {
 		name 'Left Input PGA LINPUT1 Switch'
 		value false
 	}
-	control.77 {
+	control.78 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -732,7 +745,7 @@ state.AMLM1 {
 		name 'Left Input PGA LINPUT2 Switch'
 		value true
 	}
-	control.78 {
+	control.79 {
 		comment.access 'read write'
 		comment.type BOOLEAN
 		comment.count 1
@@ -740,134 +753,4 @@ state.AMLM1 {
 		name 'Left Input PGA LINPUT3 Switch'
 		value false
 	}
-}
-state.AMLM3 {
-        control.1 {
-                comment.access 'read write'
-                comment.type INTEGER
-                comment.count 2
-                comment.range '0 - 84'
-                comment.dbmin -12600
-                comment.dbmax 0
-                iface MIXER
-                name 'LINEOUT Playback Volume'
-                value.0 84
-                value.1 84
-        }
-        control.2 {
-                comment.access 'read write'
-                comment.type INTEGER
-                comment.count 2
-                comment.range '0 - 46'
-                comment.dbmin -4000
-                comment.dbmax 600
-                iface MIXER
-                name 'HeadSet Playback Volume'
-                value.0 40
-                value.1 40
-        }
-        control.3 {
-                comment.access 'read write'
-                comment.type INTEGER
-                comment.count 2
-                comment.range '0 - 84'
-                comment.dbmin -9600
-                comment.dbmax 3000
-                iface MIXER
-                name 'LINEIN Capture Volume'
-                value.0 64
-                value.1 64
-        }
-        control.4 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 'Left Line In 1'
-                comment.item.1 'Left Line In 2'
-                comment.item.2 'Left Line In 3'
-                comment.item.3 'Left Line In 4'
-                comment.item.4 'Left Line In 5'
-                comment.item.5 'Left Line In 6'
-                comment.item.6 'Left Line In 7'
-                comment.item.7 'Left Line In 8'
-                iface MIXER
-                name 'Left LINEIN Select'
-                value 'Left Line In 1'
-        }
-        control.5 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 'Right Line In 1'
-                comment.item.1 'Right Line In 2'
-                comment.item.2 'Right Line In 3'
-                comment.item.3 'Right Line In 4'
-                comment.item.4 'Right Line In 5'
-                comment.item.5 'Right Line In 6'
-                comment.item.6 'Right Line In 7'
-                comment.item.7 'Right Line In 8'
-                iface MIXER
-                name 'Right LINEIN Select'
-                value 'Right Line In 1'
-        }
-        control.6 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 iis_not_split
-                comment.item.1 iis_split
-                iface MIXER
-                name 'IIS Split Select'
-                value iis_split
-        }
-        control.7 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 OFF
-                comment.item.1 ON
-                iface MIXER
-                name 'LOUT Playback Switch'
-                value ON
-        }
-        control.8 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 OFF
-                comment.item.1 ON
-                iface MIXER
-                name 'HP Playback Switch'
-                value ON
-        }
-        control.9 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 OFF
-                comment.item.1 ON
-                iface MIXER
-                name 'LIN Capture Switch'
-                value ON
-        }
-        control.10 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 OFF
-                comment.item.1 ON
-                iface MIXER
-                name 'SP Playback Switch'
-                value ON
-        }
-        control.11 {
-                comment.access 'read write'
-                comment.type ENUMERATED
-                comment.count 1
-                comment.item.0 LINEIN
-                comment.item.1 HDMI
-                iface MIXER
-                name 'Audio In Source'
-                value LINEIN
-        }
 }

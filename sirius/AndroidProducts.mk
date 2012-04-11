@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/team_sirius.mk
+    $(LOCAL_DIR)/osr_sirius.mk

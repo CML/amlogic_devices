@@ -15,11 +15,6 @@
 #
 DEVICE_PACKAGE_OVERLAYS := device/amlogic/aml-common/overlay
 
-PRODUCT_PACKAGES := \
-	audio.a2dp.default \
-	libaudioutils \
-	libtinyalsa
-
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel \
 	device/amlogic/aml-common/etc/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf
@@ -31,9 +26,9 @@ PRODUCT_PACKAGES += \
 	VisualizationWallpapers \
 	librs_jni
 
-# Key maps
+# Key maps and swap
 PRODUCT_COPY_FILES += \
-	device/amlogic/aml-common/prebuilt/set_display_mode.sh:system/bin/set_display_mode.sh \
+	device/amlogic/aml-common/prebuilt/activate_swap.sh:system/bin/activate_swap.sh \
 	device/amlogic/aml-common/prebuilt/adc_keypad.kl:system/usr/keylayout/adc_keypad.kl \
 	device/amlogic/aml-common/prebuilt/aml_keypad.kl:system/usr/keylayout/aml_keypad.kl \
 	device/amlogic/aml-common/prebuilt/jogball.kl:system/usr/keylayout/jogball.kl
@@ -45,7 +40,10 @@ PRODUCT_COPY_FILES += \
 	frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
 	frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
 	frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+	frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.distinct.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.distinct.xml \
+	frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+	frameworks/base/data/etc/android.hardware.touchscreen.xml:system/etc/permissions/android.hardware.touchscreen.xml \
 	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
 	frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
@@ -58,6 +56,8 @@ PRODUCT_COPY_FILES += $(shell find device/amlogic/aml-common/etc -name '*' -prin
 #Power off Battery charge
 PRODUCT_COPY_FILES += $(shell find device/amlogic/aml-common/battery_pic -name '*' -printf '%p:system/resource/battery_pic/%f ')
 
+PRODUCT_TAGS += dalvik.gc.type-precise
+
 PRODUCT_PACKAGES += \
 	librs_jni
 
@@ -67,7 +67,8 @@ PRODUCT_COPY_FILES += \
 	system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
 	system/extras/bugmailer/send_bug:system/bin/send_bug
 
-$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+# heap
+$(call inherit-product, device/amlogic/aml-common/tablet-amlogic-heap.mk)
 
 #complete build.prop configuration
 $(call inherit-product, device/amlogic/aml-common/system.prop.mk)

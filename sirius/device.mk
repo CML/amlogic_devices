@@ -20,19 +20,32 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-# Modules
-PRODUCT_COPY_FILES := \
-	$(LOCAL_KERNEL):kernel \
-	device/amlogic/sirius/prebuilt/modules/mali.ko:system/lib/modules/mali.ko \
-	device/amlogic/sirius/prebuilt/modules/ump.ko:system/lib/modules/ump.ko
-
 # Inherit generic amlogic device
 $(call inherit-product, device/amlogic/aml-common/aml-common.mk)
+
+
+# Modules
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel \
+	device/amlogic/sirius/prebuilt/modules/mali.ko:system/lib/modules/mali.ko \
+	device/amlogic/sirius/prebuilt/modules/ump.ko:system/lib/modules/ump.ko \
+	device/amlogic/sirius/prebuilt/modules/cifs.ko:system/lib/modules/cifs.ko \
+	device/amlogic/sirius/prebuilt/modules/tun.ko:system/lib/modules/tun.ko
+
+# Sensors
+PRODUCT_COPY_FILES += \
+	device/amlogic/sirius/prebuilt/sensors/sensors.amlogic.so:system/lib/hw/sensors.amlogic.so \
+	device/amlogic/sirius/prebuilt/sensors/memsicd:system/bin/memsicd
 
 # Input device calibration files
 PRODUCT_COPY_FILES += \
 	device/amlogic/sirius/prebuilt/Goodix_TouchScreen_of_Guitar.idc:system/usr/idc/Goodix_TouchScreen_of_Guitar.idc
 
+# Display modes
+PRODUCT_COPY_FILES += \
+	device/amlogic/sirius/prebuilt/set_display_mode.sh:system/bin/set_display_mode.sh \
+
 # Gsensor
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.gsensorposition=3
+	ro.sf.gsensorposition=3 \
+	ro.setupwizard.mode=OPTIONAL

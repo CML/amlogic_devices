@@ -14,4 +14,4 @@
 # limitations under the License.
 #
 
-add_lunch_combo team_sirius-eng
+add_lunch_combo osr_sirius-eng

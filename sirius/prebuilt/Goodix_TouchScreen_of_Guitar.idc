@@ -12,29 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Basic Parameters
+#Basic
 touch.deviceType = touchScreen
 touch.orientationAware = 1
 touch.sizeAware = 1
 
-# Touch Size
-touch.touchSize.calibration = default
+#Keyboard
+keyboard.layout = qwerty
+keyboard.characterMap = qwerty
+keyboard.orientationAware = 1
+keyboard.builtIn = 1
 
-# Tool Size
-touch.toolSize.calibration = default
-
-# Pressure
-touch.pressure.calibration = amplitude
-touch.pressure.scale = 0.025
-
-# Size
-touch.size.calibration = area
-touch.size.scale = 18
-touch.size.bias = 0
-touch.size.isSummed = 0
-
-# Orientation
-touch.orientation.calibration = none
-
-# Distance
-touch.distance.calibration = none
+#Cursor
+cursor.mode = pointer
+cursor.orientationAware = 1
