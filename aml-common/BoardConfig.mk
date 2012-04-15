@@ -24,6 +24,7 @@ USE_CAMERA_STUB := true
 BOARD_EGL_CFG := device/amlogic/aml-common/prebuilt/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_USE_SKIA_LCDTEXT := true
+BOARD_USES_AMLOGICPLAYER := true
 
 #HW composer
 BOARD_USES_HWCOMPOSER := true
