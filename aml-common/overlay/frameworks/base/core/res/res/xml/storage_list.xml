@@ -36,7 +36,7 @@
     <!-- removable is not set in nosdcard product -->
     <storage android:mountPoint="/mnt/sdcard"
     		 android:storageDescription="@string/storage_internal"
-			 android:primary="true"
+		 android:primary="true"
     		 android:removable="true" 
 		 android:allowMassStorage="true" />
     <storage android:mountPoint="/mnt/nand"
