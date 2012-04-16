@@ -30,7 +30,8 @@ PRODUCT_COPY_FILES += \
 	device/amlogic/sirius/prebuilt/modules/mali.ko:system/lib/modules/mali.ko \
 	device/amlogic/sirius/prebuilt/modules/ump.ko:system/lib/modules/ump.ko \
 	device/amlogic/sirius/prebuilt/modules/cifs.ko:system/lib/modules/cifs.ko \
-	device/amlogic/sirius/prebuilt/modules/tun.ko:system/lib/modules/tun.ko
+	device/amlogic/sirius/prebuilt/modules/tun.ko:system/lib/modules/tun.ko \
+	device/amlogic/sirius/prebuilt/modules/ext4.ko:system/lib/modules/ext4.ko
 
 # Sensors
 PRODUCT_COPY_FILES += \
