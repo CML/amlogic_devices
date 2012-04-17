@@ -19,8 +19,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.phone_storage=1 \
     wifi.supplicant_scan_interval=30 \
     ro.app.optimization=true \
-    input.hwrotation=0 \
-    ro.sf.hwrotation=0 \
+    input.hwrotation=270 \
+    ro.sf.hwrotation=270 \
     persist.service.zram=1 \
     ro.zram.default=26
 
