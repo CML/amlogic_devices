@@ -14,7 +14,7 @@ case $1 in
     ;;
 
     panel)
-        /system/bin/busybox fbset -fb /dev/graphics/fb0 -g 1280 768 1280 1536 16 -rgba 5/11,6/5,5/0,0/0
+        /system/bin/busybox fbset -fb /dev/graphics/fb0 -g 1280 768 1280 1536 32 -rgba 5/11,6/5,5/0,0/0
 	/system/bin/busybox fbset -fb /dev/graphics/fb1 -g 32 32 32 32 32
         echo $1 > /sys/class/display/mode
         echo 1 1 1280 768 1 1 18 18 > /sys/class/display/axis
